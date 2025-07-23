@@ -1,0 +1,42 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+# Makes code denser
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortCaseLabelsOnASingleLine: true
+
+# Spaces
+SpaceBeforeParens: Never
+SpacesInContainerLiterals: false
+SpaceInEmptyParentheses: false
+
+# Braces
+BreakBeforeBraces: Attach
+BraceWrapping:
+  AfterFunction: false
+  AfterControlStatement: false
+  AfterEnum: false
+  AfterStruct: false
+  AfterUnion: false
+  BeforeElse: false
+  IndentBraces: false
+
+# Keep includes clean
+SortIncludes: true
+IncludeBlocks: Merge
+
+# Column width
+ColumnLimit: 90
+
+# Function declarations
+BinPackParameters: true
+BinPackArguments: true
+
+# Indentation
+IndentCaseLabels: true
+IndentGotoLabels: true
+AlignConsecutiveAssignments: false
