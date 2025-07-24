@@ -1,0 +1,9 @@
+[book]
+authors = ["sebascert"]
+language = "en"
+src = "src"
+title = "CP DSA Implementations"
+
+[output.html]
+
+[output.pdf]
