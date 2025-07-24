@@ -1,4 +1,5 @@
 # Summary
 
+- [Template](./template.md)
 - [Utils](./utils.md)
-  - [Template](./utils/template.md)
+  - [Macros](./utils/macros.md)

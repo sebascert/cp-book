@@ -2,7 +2,7 @@ src_dir := src
 test_dir := test
 build_dir := build
 
-dsa_sources := $(shell find $(src) -name '*.hpp')
+dsa_sources := $(shell find $(src) \( -name '*.hpp' -o -name '*.cpp' \))
 test_sources := $(shell find $(test_dir) -name '*.cpp')
 test_objects := $(patsubst $(test_dir)/%.cpp, $(build_dir)/%.o, $(test_sources))
 
