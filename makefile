@@ -2,6 +2,7 @@ src_dir := src
 test_dir := test
 build_dir := build
 
+dsa_sources := $(shell find $(src) -name '*.hpp')
 test_sources := $(shell find $(test_dir) -name '*.cpp')
 test_objects := $(patsubst $(test_dir)/%.cpp, $(build_dir)/%.o, $(test_sources))
 
@@ -17,6 +18,10 @@ all: $(target)
 
 test: $(target)
 	./$(target)
+
+format: $(dsa_sources) $(test_sources)
+	@clang-format -i $^
+	@dprint fmt
 
 .PHONY: all test
 
