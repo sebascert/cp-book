@@ -7,3 +7,4 @@
 - [Math](./math.md)
   - [Binary Exponentiation](./math/binexp.md)
 - [Trees](./trees.md)
+  - [Segment Tree](./trees/segment_tree.md)
