@@ -35,6 +35,7 @@ Follow this template for every DSA implementation:
 - Avoid classes, no need for encapsulation.
 - Always use templates when needed, they help to avoid type errors, for example
   integer overflows.
+- Add `//@` comments to lines which may get changed during DSA usage.
 
 ```cpp
 #include ...
