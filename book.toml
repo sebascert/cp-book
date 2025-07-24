@@ -5,5 +5,7 @@ src = "src"
 title = "CP DSA Implementations"
 
 [output.html]
+mathjax-support = true
 
 [output.pdf]
+mathjax-support = true
