@@ -1,0 +1,34 @@
+src_dir := src
+test_dir := test
+build_dir := build
+
+test_sources := $(shell find $(test_dir) -name '*.cpp')
+test_objects := $(patsubst $(test_dir)/%.cpp, $(build_dir)/%.o, $(test_sources))
+
+# Compiler and flags
+CXX := g++
+CXXFLAGS := -std=c++17 -Wall -Wextra -g -I$(src_dir)
+
+GTEST_FLAGS := -lgtest -lgtest_main -pthread
+
+target := $(build_dir)/test
+
+all: $(target)
+
+test: $(target)
+	./$(target)
+
+.PHONY: all test
+
+$(target): $(test_objects)
+	@$(CXX) $(CXXFLAGS) $^ -o $@ $(GTEST_FLAGS)
+	@echo "compiled tests"
+
+$(build_dir)/%.o: $(test_dir)/%.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	@rm -rf $(build_dir)
+
+.PHONY: clean
