@@ -1,7 +1,27 @@
 BasedOnStyle: LLVM
-IndentWidth: 4
-TabWidth: 4
 UseTab: Never
+
+# Better visualization on the book
+ColumnLimit: 68
+IndentWidth: 2
+TabWidth: 2
+
+# Includes
+IncludeIsMainRegex: "$"
+SortIncludes: true
+IncludeBlocks: Regroup
+
+IncludeCategories:
+    # Project headers
+  - Regex: '^".*\.h"$'
+    Priority: 1
+    # System headers
+  - Regex: '^<.*\.h>$'
+    Priority: 3
+    # Any other include
+  - Regex: '.*'
+    Priority: 4
+
 
 # Makes code denser
 AllowShortIfStatementsOnASingleLine: Always
@@ -24,13 +44,6 @@ BraceWrapping:
   AfterUnion: false
   BeforeElse: false
   IndentBraces: false
-
-# Keep includes clean
-SortIncludes: true
-IncludeBlocks: Merge
-
-# Column width
-ColumnLimit: 90
 
 # Function declarations
 BinPackParameters: true
