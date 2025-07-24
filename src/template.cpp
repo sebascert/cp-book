@@ -18,7 +18,7 @@ typedef long double ld;
 #endif // !ONLINE_JUDGE
 
 #define fora(i, a, b) for(sz i = (a); (i) < (b); ++i) // [a -> b)
-#define ford(i, a, b) for(sz i = (a); --(i) > (b);)   // [b <- a]
+#define ford(i, a, b) for(sz i = (a); (i)-- > (b);)   // [b <- a)
 
 int main() {
   FIO;
