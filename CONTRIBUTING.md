@@ -2,9 +2,9 @@
 
 ## Dependencies
 
-- [dprint](https://github.com/dprint/dprint).
-- [clang-format](https://clang.llvm.org/docs/ClangFormat.html)
-- [gtest](https://github.com/google/googletest)
+- [dprint-latest](https://github.com/dprint/dprint).
+- [clang-format-18](https://clang.llvm.org/docs/ClangFormat.html)
+- [gtest-latest](https://github.com/google/googletest)
 
 ## Formatting
 
