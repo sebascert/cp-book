@@ -41,7 +41,7 @@ Follow this template for every DSA implementation:
 #include ...
 
 // template macros and typedefs
-typedef size_t sz;
+typedef long long lli;
 #define fora(i, a, b) for(sz i = (a); (i) < (b); ++i) // [a -> b)
 
 // non template macros and typedefs

@@ -7,7 +7,6 @@ using namespace std;
   cin.tie(0);                   /* nullptr */                      \
   cout.tie(0);                  /* nullptr */
 
-typedef size_t sz;
 typedef long long lli;
 typedef long double ld;
 
@@ -17,8 +16,11 @@ typedef long double ld;
 #define perr(x) 0
 #endif // !ONLINE_JUDGE
 
-#define fora(i, a, b) for(sz i = (a); (i) < (b); ++i) // [a -> b)
-#define ford(i, a, b) for(sz i = (a); (i)-- > (b);)   // [b <- a)
+#define sz(c) c.size()
+#define fora(i, a, b) for(lli i = (a); (i) < (b); ++i) // [a -> b)
+#define ford(i, a, b) for(lli i = (a); (i)-- > (b);)   // [b <- a)
+
+typedef lli num;
 
 int main() {
   FIO;
