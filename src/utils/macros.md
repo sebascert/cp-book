@@ -2,7 +2,7 @@
 
 > source: NA
 
-Usefull macros.
+Useful macros.
 
 ```cpp
 {{#include macros.hpp:3:}}
