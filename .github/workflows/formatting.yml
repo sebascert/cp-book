@@ -1,0 +1,26 @@
+name: PR Check Formatting
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '**.cpp'
+      - '**.hpp'
+      - '**.clang-format'
+      - 'makefile'
+      - '.github/workflows/**'
+
+jobs:
+  formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Check formatting with dprint
+      uses: dprint/check@v2.3
+
+    - name: Check formatting with clang-format
+      uses: jidicula/clang-format-action@v4.15.0
+      with:
+        clang-format-version: 18
+        check-path: .
