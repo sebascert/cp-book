@@ -13,7 +13,7 @@ If the [rust compiling environment](https://www.rust-lang.org/tools/install) is
 available, install rust dependencies by running:
 
 ```bash
-cargo install mdbook mdbook-pdf dprint
+cargo install mdbook mdbook-pdf
 ```
 
 ## Generating the Book
