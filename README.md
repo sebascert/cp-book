@@ -3,6 +3,11 @@
 This books contains a collection of common Data Structures and Algorithms (DSA)
 for competitive programming.
 
+The book is available as a:
+
+- PDF on [github releases](https://github.com/sebascert/cp-book/releases).
+- Website on [github pages](https://sebascert.github.io/cp-book/).
+
 ## Dependencies
 
 - [mdbook](https://github.com/rust-lang/mdBook).
