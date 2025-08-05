@@ -1,0 +1,65 @@
+name: Release and Deploy
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Cargo registry and build
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
+      - name: Install Rust, mdbook and mdbook-pdf
+        run: |
+          rustup update
+          cargo install mdbook --no-default-features --features search --vers "^0.4" --locked \
+           || echo "mdbook already installed"
+          cargo install mdbook-pdf || echo "mdbook-pdf already installed"
+
+      - name: Build HTML and PDF
+        run: mdbook build
+
+      - run: mv book/pdf/output.pdf book.pdf
+      - name: Upload PDF to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: book.pdf
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./book/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
