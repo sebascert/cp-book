@@ -6,8 +6,8 @@ for competitive programming.
 ## Dependencies
 
 - [mdbook](https://github.com/rust-lang/mdBook).
-- [mdbook-pdf](https://github.com/rust-lang/mdBook). Only for generating a nicer
-  pdf (with bookmarks), if you don't need this omit this dependency.
+- [mdbook-pdf](https://github.com/HollowMan6/mdbook-pdf). Only for generating a
+  nicer pdf (with bookmarks), if you don't need this omit this dependency.
 
 If the [rust compiling environment](https://www.rust-lang.org/tools/install) is
 available, install rust dependencies by running:
