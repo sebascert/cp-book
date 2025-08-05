@@ -4,7 +4,9 @@
 
 #define SUITE utils_macros
 
-alias_t(long long, lli);
+typedef long long lli;
+#define POSINF INF(lli, max)
+#define NEGINF INF(lli, min)
 
 TEST(SUITE, Sz)
 {
@@ -93,26 +95,6 @@ TEST(SUITE, Inf)
     EXPECT_EQ(INF(double, min), std::numeric_limits<double>::min());
 }
 
-// Test alias_t macro
-TEST(SUITE, AliasT)
-{
-    alias_t(int, myint);
-
-    int i = 10;
-    myint mi = 10;
-    EXPECT_EQ(i, mi);
-
-    vec v = {1, 2, 3};
-    pr p = {4, 5};
-
-    EXPECT_EQ(POSINF, numeric_limits<int>::max());
-    EXPECT_EQ(NEGINF, numeric_limits<int>::min());
-    EXPECT_EQ(v.size(), 3);
-    EXPECT_EQ(p.first, 4);
-    EXPECT_EQ(p.second, 5);
-}
-
-// Test iter macro
 TEST(SUITE, Iter)
 {
     std::vector<int> v = {42, 7, 13, 99, 1, 73, 5, 88, 21, 3};

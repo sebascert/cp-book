@@ -15,11 +15,4 @@ using namespace std;
 
 #define INF(T, s) numeric_limits<T>::s() // s: min | max
 
-#define alias_t(T, A)                                              \
-  typedef T A;                                                     \
-  const T POSINF = INF(T, max);                                    \
-  const T NEGINF = INF(T, min);                                    \
-  typedef vector<T> vec;                                           \
-  typedef pair<T, T> pr;
-
 #define all(v) v.begin(), v.end()
