@@ -4,6 +4,11 @@
 
 using namespace std;
 
+#define sz(c) c.size()
+
+#define fora(i, a, b) for(lli i = (a); (i) < (b); ++i) // [a -> b)
+#define ford(i, a, b) for(lli i = (a); (i)-- > (b);)   // [b <- a)
+
 #define mid(l, r) ((l) + ((r) - (l)) / 2)
 #define btl(p) ((p) * 2)     // binary tree buf left child
 #define btr(p) ((p) * 2 + 1) // binary tree buf right child

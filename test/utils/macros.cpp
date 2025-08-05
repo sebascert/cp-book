@@ -4,7 +4,63 @@
 
 #define SUITE utils_macros
 
-alias_t(long long, num);
+alias_t(long long, lli);
+
+TEST(SUITE, Sz)
+{
+    size_t size = 10;
+    std::vector<int> v(size);
+    EXPECT_EQ(sz(v), size);
+}
+TEST(SUITE, Fora)
+{
+    vector<lli> res;
+
+    res.clear();
+    fora(i, 0, 5) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{0, 1, 2, 3, 4}));
+
+    res.clear();
+    fora(i, -3, 2) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{-3, -2, -1, 0, 1}));
+
+    res.clear();
+    fora(i, 2, 2) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+
+    res.clear();
+    fora(i, 5, 2) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+
+    res.clear();
+    fora(i, -2, -2) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+}
+
+TEST(SUITE, Ford)
+{
+    vector<lli> res;
+
+    res.clear();
+    ford(i, 4, -1) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{3, 2, 1, 0, -1}));
+
+    res.clear();
+    ford(i, 1, -3) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{0, -1, -2, -3}));
+
+    res.clear();
+    ford(i, 2, 2) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+
+    res.clear();
+    ford(i, -2, 5) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+
+    res.clear();
+    ford(i, -1, -1) res.push_back(i);
+    EXPECT_EQ(res, (vector<lli>{}));
+}
 
 TEST(SUITE, Mid)
 {
