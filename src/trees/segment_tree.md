@@ -5,11 +5,11 @@
 Basic segment tree for computing range operations in \\( O(logN) \\).
 
 ```cpp
-{{#include segment_tree.hpp:15:}}
+{{#include segment_tree.hpp:17:46}}
 ```
 
 Dependencies.
 
 ```cpp
-{{#include segment_tree.hpp:11:14}}
+{{#include segment_tree.hpp:6:15}}
 ```
