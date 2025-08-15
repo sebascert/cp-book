@@ -15,11 +15,12 @@ typedef long long lli;
 #define INF(T, s) numeric_limits<T>::s() // s: min | max
 
 template <typename T> struct STree {
-  struct N {                                         // Node
-    T s, mn;                                         //@ state
-    N(T s = 0, T mn = INF(T, max)) : s(s), mn(mn) {} //@ identities
-    N op(N o) { //@ operations, this operates over other
-      o.s = s + o.s;
+  struct N {                       // Node
+    T s, mn;                       //@ state
+    N(T x) : s(x), mn(x) {}        //@ elem to node
+    N() : s(0), mn(INF(T, max)) {} //@ identities
+    N op(N o) {                    // this operates over other
+      o.s = s + o.s;               //@ operations
       o.mn = min(mn, o.mn);
       return o;
     }
@@ -27,11 +28,11 @@ template <typename T> struct STree {
   lli n;
   vector<N> t;
   STree(vector<T> a) : n(sz(a)), t(n * 2) { // O(T)
-    fora(i, 0, n) t[i + n] = N(a[i], a[i]); //@ elem to node
+    fora(i, 0, n) t[i + n] = N(a[i]);
     ford(i, n, 1) t[i] = t[btl(i)].op(t[btr(i)]);
   }
   void set(lli i, T x) { // O(logN)
-    for(t[i += n] = N(x, x); i /= 2;)
+    for(t[i += n] = N(x); i /= 2;)
       t[i] = t[btl(i)].op(t[btr(i) | 1]);
   }
   N query(lli i) { return t[i + n]; } // O(1)
