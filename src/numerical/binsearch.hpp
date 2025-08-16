@@ -10,18 +10,18 @@ typedef double lf;
 typedef uint32_t ui32;
 typedef uint64_t ui64;
 
-template <typename T>
-T binsearch(T l, T r, bool (*p)(T)) { // O(log(r-l))
+template <typename T, typename P> // P is a predicate
+T binsearch(T l, T r, P p) {      // O(log(r-l)) [l r]
   T m;
   while(r > l + 1) {
     m = mid(l, r);
-    (p(m) ? r : l) = m;
+    (p(m) ? r : l) = m; //@ r:l (T:F) or l:r (T:F)
   }
-  return m; //@ l (lastF) or r (firstT)
+  return m; //@ l (last T or F) or r (first T or F)
 }
 
-template <typename R, typename I>     //@ <f, ui32> or <lf, ui64>
-R binsearch(R l, R r, bool (*p)(R)) { // O(32 or 64), 0 < l <= r
+template <typename R, typename I, typename P>
+R binsearch(R l, R r, P p) { // O(32 or 64), 0 < l <= r
   I _l = rcast(I, l), _r = rcast(I, r), m;
   while(l < r) {
     m = mid(_l, _r);
@@ -30,4 +30,4 @@ R binsearch(R l, R r, bool (*p)(R)) { // O(32 or 64), 0 < l <= r
       l = m + 1;
   }
   return rcast(R, m);
-}
+} //@ either binsearch<f, ui32> or binsearch<lf, ui64>
