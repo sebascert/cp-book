@@ -6,5 +6,6 @@
   - [Types](./utils/types.md)
 - [Math](./math.md)
   - [Binary Exponentiation](./math/binexp.md)
+  - [Extended GCD](./math/extended_gcd.md)
 - [Trees](./trees.md)
   - [Segment Tree](./trees/segment_tree.md)
