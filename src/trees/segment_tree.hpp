@@ -27,7 +27,7 @@ template <typename T> struct STree {
   };
   lli n;
   vector<N> t;
-  STree(vector<T> a) : n(sz(a)), t(n * 2) { // O(T)
+  STree(vector<T> a) : n(sz(a)), t(n * 2) { // O(N)
     fora(i, 0, n) t[i + n] = N(a[i]);
     ford(i, n, 1) t[i] = t[btl(i)].op(t[btr(i)]);
   }
