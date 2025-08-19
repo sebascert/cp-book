@@ -8,3 +8,4 @@
   - [Binary Exponentiation](./math/binexp.md)
 - [Trees](./trees.md)
   - [Disjoint Set Union](./trees/disjoint_set_union.md)
+  - [Segment Tree](./trees/segment_tree.md)
