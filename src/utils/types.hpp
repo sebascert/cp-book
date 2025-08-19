@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <cstdint>
 #include <ostream>
 
 using namespace std;
@@ -6,7 +7,14 @@ using namespace std;
 typedef size_t size;
 typedef long long lli;
 typedef unsigned long long ull;
+
+typedef double lf;
 typedef long double ld;
+
+typedef uint32_t ui32;
+typedef uint64_t ui64;
+
+#define rcast(T, V) reinterpret_cast<T &>(V)
 
 struct Type {
   int x, y;
